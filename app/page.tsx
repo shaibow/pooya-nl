@@ -207,7 +207,8 @@ function Hero() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease: "backOut", delay: 0.2 }}
-          className="flex justify-center mb-8 float-pixel"
+          className="flex justify-center float-pixel"
+          style={{ marginBottom: "2.5rem" }}
         >
           <div className="relative">
             <PixelAvatar />
@@ -225,7 +226,8 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-press-start text-2xl sm:text-3xl md:text-4xl text-white mb-4 leading-tight tracking-tight"
+          className="font-press-start text-2xl sm:text-3xl md:text-4xl text-white leading-tight tracking-tight"
+          style={{ marginBottom: "1.75rem" }}
         >
           POOYA<br />KHOSHBAKHT
         </motion.h1>
@@ -235,7 +237,8 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.7 }}
-          className="font-vt323 text-2xl sm:text-3xl text-white/70 mb-6 h-8"
+          className="font-vt323 text-2xl sm:text-3xl text-white/70"
+          style={{ marginBottom: "1.5rem", minHeight: "2.5rem" }}
         >
           <TypeAnimation
             sequence={[
@@ -260,7 +263,8 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.9 }}
-          className="font-space-mono text-xs text-white/40 tracking-widest mb-10"
+          className="font-space-mono text-xs text-white/60 tracking-widest"
+          style={{ marginBottom: "2.5rem" }}
         >
           📍 AMSTERDAM, NETHERLANDS
         </motion.p>
@@ -270,7 +274,8 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="font-space-mono text-base text-white/80 max-w-xl mx-auto leading-relaxed mb-12"
+          className="font-space-mono text-base text-white/80 max-w-xl mx-auto leading-relaxed"
+          style={{ marginBottom: "2rem" }}
         >
           Innovative product leader with a proven track record of identifying performance issues
           and crafting solutions that achieve product–market fit and sustainable growth.
@@ -281,7 +286,8 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 1.2 }}
-          className="font-vt323 text-xl text-white/55 italic mb-10"
+          className="font-vt323 text-xl text-white/55 italic"
+          style={{ marginBottom: "2.5rem" }}
         >
           &ldquo;My greatest strength is the ability to learn and adapt fast.&rdquo;
         </motion.div>
@@ -291,7 +297,8 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.3 }}
-          className="flex flex-wrap gap-4 justify-center"
+          className="flex flex-wrap justify-center"
+          style={{ gap: "1.25rem" }}
         >
           <a href="mailto:hi@pooya.nl" className="pixel-btn">
             GET IN TOUCH
