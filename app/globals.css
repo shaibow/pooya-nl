@@ -264,6 +264,11 @@ body::after {
   font-family: var(--font-space-mono);
 }
 
+/* Experience card list spacing */
+.experience-list > * + * {
+  margin-top: 3.5rem;
+}
+
 /* Timeline connector */
 .timeline-dot {
   width: 12px;

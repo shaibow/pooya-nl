@@ -118,7 +118,7 @@ const extras = [
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-4 mb-14">
+    <div className="flex items-center gap-4" style={{ marginBottom: "2.5rem" }}>
       <span className="font-press-start text-sm tracking-widest text-white/80">
         {children}
       </span>
@@ -130,8 +130,8 @@ function SectionLabel({ children }: { children: ReactNode }) {
 function PixelCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`relative border-2 border-white p-8 bg-black hover:bg-white/5 transition-colors duration-200 ${className}`}
-      style={{ imageRendering: "pixelated" }}
+      className={`relative border-2 border-white bg-black hover:bg-white/5 transition-colors duration-200 ${className}`}
+      style={{ imageRendering: "pixelated", padding: "2rem" }}
     >
       {/* Corner pixels */}
       <div className="absolute -top-1 -left-1 w-2 h-2 bg-white" />
@@ -144,7 +144,7 @@ function PixelCard({ children, className = "" }: { children: ReactNode; classNam
 }
 
 function PixelDivider() {
-  return <div className="pixel-divider w-full my-8 opacity-20" />;
+  return <div className="pixel-divider w-full opacity-20" style={{ margin: "5rem 0" }} />;
 }
 
 // ─── Nav ─────────────────────────────────────────────────────────────────────
@@ -330,7 +330,7 @@ function Hero() {
 
 function Experience() {
   return (
-    <section id="experience" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
+    <section id="experience" className="relative z-10 max-w-4xl mx-auto px-6" style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
       <SectionLabel>// EXPERIENCE</SectionLabel>
 
       <div className="relative">
@@ -342,7 +342,7 @@ function Experience() {
           }}
         />
 
-        <div className="space-y-16 md:pl-10">
+        <div className="experience-list md:pl-10">
           {experience.map((job, i) => (
             <ScrollReveal key={job.company} delay={i * 0.1}>
               <div className="relative">
@@ -350,7 +350,7 @@ function Experience() {
                 <div className="absolute -left-[47px] top-6 w-3 h-3 bg-white hidden md:block" />
 
                 <PixelCard>
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3" style={{ marginBottom: "1.5rem" }}>
                     <div>
                       <a
                         href={job.url}
@@ -360,19 +360,19 @@ function Experience() {
                       >
                         {job.company}
                       </a>
-                      <div className="font-vt323 text-2xl text-white/90 mt-2">{job.role}</div>
+                      <div className="font-vt323 text-2xl text-white/90" style={{ marginTop: "0.5rem" }}>{job.role}</div>
                     </div>
                     <div className="text-right">
                       <div className="font-space-mono text-sm text-white/70">{job.period}</div>
-                      <div className="font-space-mono text-sm text-white/55 mt-1">{job.location}</div>
+                      <div className="font-space-mono text-sm text-white/55" style={{ marginTop: "0.25rem" }}>{job.location}</div>
                     </div>
                   </div>
 
-                  <p className="font-space-mono text-sm text-white/80 mb-6 leading-relaxed border-l-2 border-white/40 pl-4">
+                  <p className="font-space-mono text-sm text-white/80 leading-relaxed border-l-2 border-white/40" style={{ paddingLeft: "1rem", marginBottom: "1.5rem" }}>
                     {job.blurb}
                   </p>
 
-                  <ul className="space-y-3">
+                  <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                     {job.bullets.map((b, j) => (
                       <li key={j} className="flex items-start gap-3 font-space-mono text-sm text-white/90 leading-relaxed">
                         <span className="text-white/50 mt-0.5 flex-shrink-0">▸</span>
@@ -394,17 +394,17 @@ function Experience() {
 
 function Skills() {
   return (
-    <section id="skills" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
+    <section id="skills" className="relative z-10 max-w-4xl mx-auto px-6" style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
       <SectionLabel>// SKILLS</SectionLabel>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "2rem" }}>
         {skills.map((group, i) => (
           <ScrollReveal key={group.category} delay={i * 0.08}>
             <PixelCard>
-              <div className="font-press-start text-xs text-white/80 mb-5 tracking-wider">
+              <div className="font-press-start text-xs text-white/80 tracking-wider" style={{ marginBottom: "1.25rem" }}>
                 {group.category}
               </div>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap" style={{ gap: "0.625rem" }}>
                 {group.items.map((skill) => (
                   <span key={skill} className="pixel-tag text-xs">
                     {skill}
@@ -423,20 +423,20 @@ function Skills() {
 
 function Education() {
   return (
-    <section id="education" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
+    <section id="education" className="relative z-10 max-w-4xl mx-auto px-6" style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
       <SectionLabel>// EDUCATION</SectionLabel>
 
       <ScrollReveal>
-        <PixelCard className="mb-10">
-          <div className="flex flex-col sm:flex-row sm:justify-between gap-3">
+        <PixelCard style={{ marginBottom: "3rem" }}>
+          <div className="flex flex-col sm:flex-row sm:justify-between" style={{ gap: "1rem" }}>
             <div>
-              <div className="font-press-start text-sm text-white mb-2">Amirkabir University of Technology</div>
+              <div className="font-press-start text-sm text-white" style={{ marginBottom: "0.5rem" }}>Amirkabir University of Technology</div>
               <div className="font-vt323 text-2xl text-white/90">BSc, Information Technology Engineering</div>
-              <div className="font-space-mono text-sm text-white/65 mt-2">Tehran, Iran</div>
+              <div className="font-space-mono text-sm text-white/65" style={{ marginTop: "0.5rem" }}>Tehran, Iran</div>
             </div>
             <div className="font-space-mono text-sm text-white/65 sm:text-right">2009 – 2013</div>
           </div>
-          <p className="font-space-mono text-sm text-white/70 mt-5 leading-relaxed">
+          <p className="font-space-mono text-sm text-white/70 leading-relaxed" style={{ marginTop: "1.25rem" }}>
             Coursework in software engineering, databases, and information systems.
           </p>
         </PixelCard>
@@ -444,14 +444,14 @@ function Education() {
 
       <SectionLabel>// CERTIFICATIONS</SectionLabel>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "1.25rem" }}>
         {certifications.map((cert, i) => (
           <ScrollReveal key={cert.title} delay={i * 0.07}>
-            <div className="border border-white/30 p-6 hover:border-white/70 transition-colors duration-200 relative group">
+            <div className="border border-white/30 hover:border-white/70 transition-colors duration-200 relative group" style={{ padding: "1.5rem" }}>
               <div className="absolute top-0 left-0 w-2 h-2 bg-white/0 group-hover:bg-white transition-colors duration-200" />
-              <div className="font-space-mono text-sm text-white/85 mb-2 leading-relaxed">{cert.title}</div>
+              <div className="font-space-mono text-sm text-white/85 leading-relaxed" style={{ marginBottom: "0.5rem" }}>{cert.title}</div>
               <div className="font-vt323 text-xl text-white/65">{cert.org}</div>
-              <div className="font-press-start text-[10px] text-white/55 mt-3">{cert.year}</div>
+              <div className="font-press-start text-[10px] text-white/55" style={{ marginTop: "0.75rem" }}>{cert.year}</div>
             </div>
           </ScrollReveal>
         ))}
@@ -464,16 +464,16 @@ function Education() {
 
 function Extras() {
   return (
-    <section className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+    <section className="relative z-10 max-w-4xl mx-auto px-6" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
       <SectionLabel>// EXTRACURRICULAR</SectionLabel>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "2rem" }}>
         {extras.map((e, i) => (
           <ScrollReveal key={e.org} delay={i * 0.1}>
             <PixelCard>
-              <div className="font-press-start text-xs text-white mb-2">{e.org}</div>
-              <div className="font-vt323 text-2xl text-white/85 mb-2">{e.role}</div>
-              <div className="font-space-mono text-sm text-white/60 mb-4">{e.period}</div>
+              <div className="font-press-start text-xs text-white" style={{ marginBottom: "0.5rem" }}>{e.org}</div>
+              <div className="font-vt323 text-2xl text-white/85" style={{ marginBottom: "0.5rem" }}>{e.role}</div>
+              <div className="font-space-mono text-sm text-white/60" style={{ marginBottom: "1rem" }}>{e.period}</div>
               <p className="font-space-mono text-sm text-white/80 leading-relaxed">{e.desc}</p>
             </PixelCard>
           </ScrollReveal>
@@ -493,15 +493,15 @@ function Languages() {
   ];
 
   return (
-    <section className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+    <section className="relative z-10 max-w-4xl mx-auto px-6" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
       <SectionLabel>// LANGUAGES</SectionLabel>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "2rem" }}>
         {langs.map((lang, i) => (
           <ScrollReveal key={lang.name} delay={i * 0.1}>
-            <div className="border border-white/30 p-7 hover:border-white/70 transition-colors duration-200">
-              <div className="font-press-start text-xs text-white mb-3">{lang.name}</div>
-              <div className="font-vt323 text-xl text-white/75 mb-5">{lang.level}</div>
+            <div className="border border-white/30 hover:border-white/70 transition-colors duration-200" style={{ padding: "1.75rem" }}>
+              <div className="font-press-start text-xs text-white" style={{ marginBottom: "0.75rem" }}>{lang.name}</div>
+              <div className="font-vt323 text-xl text-white/75" style={{ marginBottom: "1.25rem" }}>{lang.level}</div>
               <div className="w-full h-2 bg-white/10 relative overflow-hidden">
                 <motion.div
                   className="absolute left-0 top-0 h-full bg-white"
@@ -523,17 +523,17 @@ function Languages() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
+    <section id="contact" className="relative z-10 max-w-4xl mx-auto px-6" style={{ paddingTop: "5rem", paddingBottom: "5rem" }}>
       <SectionLabel>// CONTACT</SectionLabel>
 
       <ScrollReveal>
         <PixelCard className="text-center">
-          <div className="font-press-start text-xs text-white/65 mb-5 tracking-wider">READY TO CONNECT?</div>
-          <div className="font-press-start text-xl sm:text-2xl text-white mb-8 leading-tight">
+          <div className="font-press-start text-xs text-white/65 tracking-wider" style={{ marginBottom: "1.25rem" }}>READY TO CONNECT?</div>
+          <div className="font-press-start text-xl sm:text-2xl text-white leading-tight" style={{ marginBottom: "2rem" }}>
             LET&rsquo;S BUILD<br />SOMETHING GREAT
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center" style={{ gap: "1.5rem", marginBottom: "2rem" }}>
             <a
               href="mailto:hi@pooya.nl"
               className="font-space-mono text-sm text-white/70 hover:text-white transition-colors flex items-center gap-2"
