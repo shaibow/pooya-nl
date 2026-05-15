@@ -1,0 +1,9 @@
+---
+description: Git commit conventions
+alwaysApply: true
+---
+
+# Git Commit Rules
+
+- NEVER add `Co-authored-by: Cursor` or any AI co-authorship trailers to commit messages.
+- Commits are authored solely by the user.
