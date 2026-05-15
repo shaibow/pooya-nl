@@ -14,6 +14,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 17px;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
   color: #fff;
   font-family: var(--font-space-mono);
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='white'/%3E%3C/svg%3E") 0 0, auto;
+  line-height: 1.7;
 }
 
 /* Scanlines overlay */
@@ -81,10 +83,10 @@ body::after {
 /* Pixel art button */
 .pixel-btn {
   font-family: var(--font-press-start);
-  font-size: 10px;
+  font-size: 11px;
   background: #fff;
   color: #000;
-  padding: 12px 20px;
+  padding: 14px 24px;
   border: none;
   cursor: pointer;
   position: relative;
@@ -228,11 +230,11 @@ body::after {
 /* Tag pill */
 .pixel-tag {
   font-family: var(--font-space-mono);
-  font-size: 11px;
+  font-size: 13px;
   background: transparent;
   color: #fff;
   border: 2px solid #fff;
-  padding: 3px 10px;
+  padding: 5px 12px;
   display: inline-block;
   white-space: nowrap;
 }

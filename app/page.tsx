@@ -118,8 +118,8 @@ const extras = [
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-4 mb-12">
-      <span className="font-press-start text-xs tracking-widest text-white/60">
+    <div className="flex items-center gap-4 mb-14">
+      <span className="font-press-start text-sm tracking-widest text-white/80">
         {children}
       </span>
       <div className="flex-1 pixel-divider opacity-30" />
@@ -130,7 +130,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
 function PixelCard({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`relative border-2 border-white p-6 bg-black hover:bg-white/5 transition-colors duration-200 ${className}`}
+      className={`relative border-2 border-white p-8 bg-black hover:bg-white/5 transition-colors duration-200 ${className}`}
       style={{ imageRendering: "pixelated" }}
     >
       {/* Corner pixels */}
@@ -144,7 +144,7 @@ function PixelCard({ children, className = "" }: { children: ReactNode; classNam
 }
 
 function PixelDivider() {
-  return <div className="pixel-divider w-full my-24 opacity-20" />;
+  return <div className="pixel-divider w-full my-8 opacity-20" />;
 }
 
 // ─── Nav ─────────────────────────────────────────────────────────────────────
@@ -270,7 +270,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
-          className="font-space-mono text-sm text-white/60 max-w-xl mx-auto leading-relaxed mb-12"
+          className="font-space-mono text-base text-white/80 max-w-xl mx-auto leading-relaxed mb-12"
         >
           Innovative product leader with a proven track record of identifying performance issues
           and crafting solutions that achieve product–market fit and sustainable growth.
@@ -281,7 +281,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 1.2 }}
-          className="font-vt323 text-lg text-white/30 italic mb-10"
+          className="font-vt323 text-xl text-white/55 italic mb-10"
         >
           &ldquo;My greatest strength is the ability to learn and adapt fast.&rdquo;
         </motion.div>
@@ -330,7 +330,7 @@ function Hero() {
 
 function Experience() {
   return (
-    <section id="experience" className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+    <section id="experience" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
       <SectionLabel>// EXPERIENCE</SectionLabel>
 
       <div className="relative">
@@ -342,7 +342,7 @@ function Experience() {
           }}
         />
 
-        <div className="space-y-12 md:pl-10">
+        <div className="space-y-16 md:pl-10">
           {experience.map((job, i) => (
             <ScrollReveal key={job.company} delay={i * 0.1}>
               <div className="relative">
@@ -350,32 +350,32 @@ function Experience() {
                 <div className="absolute -left-[47px] top-6 w-3 h-3 bg-white hidden md:block" />
 
                 <PixelCard>
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-6">
                     <div>
                       <a
                         href={job.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="font-press-start text-xs text-white hover:underline glitch-hover inline-block"
+                        className="font-press-start text-sm text-white hover:underline glitch-hover inline-block"
                       >
                         {job.company}
                       </a>
-                      <div className="font-vt323 text-xl text-white/70 mt-1">{job.role}</div>
+                      <div className="font-vt323 text-2xl text-white/90 mt-2">{job.role}</div>
                     </div>
                     <div className="text-right">
-                      <div className="font-space-mono text-xs text-white/40">{job.period}</div>
-                      <div className="font-space-mono text-xs text-white/30 mt-1">{job.location}</div>
+                      <div className="font-space-mono text-sm text-white/70">{job.period}</div>
+                      <div className="font-space-mono text-sm text-white/55 mt-1">{job.location}</div>
                     </div>
                   </div>
 
-                  <p className="font-space-mono text-xs text-white/50 mb-4 leading-relaxed border-l-2 border-white/20 pl-3">
+                  <p className="font-space-mono text-sm text-white/80 mb-6 leading-relaxed border-l-2 border-white/40 pl-4">
                     {job.blurb}
                   </p>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {job.bullets.map((b, j) => (
-                      <li key={j} className="flex items-start gap-3 font-space-mono text-xs text-white/70 leading-relaxed">
-                        <span className="text-white/30 mt-0.5 flex-shrink-0">▸</span>
+                      <li key={j} className="flex items-start gap-3 font-space-mono text-sm text-white/90 leading-relaxed">
+                        <span className="text-white/50 mt-0.5 flex-shrink-0">▸</span>
                         {b}
                       </li>
                     ))}
@@ -394,14 +394,14 @@ function Experience() {
 
 function Skills() {
   return (
-    <section id="skills" className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+    <section id="skills" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
       <SectionLabel>// SKILLS</SectionLabel>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skills.map((group, i) => (
           <ScrollReveal key={group.category} delay={i * 0.08}>
             <PixelCard>
-              <div className="font-press-start text-[10px] text-white/50 mb-4 tracking-wider">
+              <div className="font-press-start text-xs text-white/80 mb-5 tracking-wider">
                 {group.category}
               </div>
               <div className="flex flex-wrap gap-2">
@@ -423,20 +423,20 @@ function Skills() {
 
 function Education() {
   return (
-    <section id="education" className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+    <section id="education" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
       <SectionLabel>// EDUCATION</SectionLabel>
 
       <ScrollReveal>
-        <PixelCard className="mb-6">
-          <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
+        <PixelCard className="mb-10">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-3">
             <div>
-              <div className="font-press-start text-xs text-white mb-1">Amirkabir University of Technology</div>
-              <div className="font-vt323 text-xl text-white/70">BSc, Information Technology Engineering</div>
-              <div className="font-space-mono text-xs text-white/40 mt-2">Tehran, Iran</div>
+              <div className="font-press-start text-sm text-white mb-2">Amirkabir University of Technology</div>
+              <div className="font-vt323 text-2xl text-white/90">BSc, Information Technology Engineering</div>
+              <div className="font-space-mono text-sm text-white/65 mt-2">Tehran, Iran</div>
             </div>
-            <div className="font-space-mono text-xs text-white/40 sm:text-right">2009 – 2013</div>
+            <div className="font-space-mono text-sm text-white/65 sm:text-right">2009 – 2013</div>
           </div>
-          <p className="font-space-mono text-xs text-white/40 mt-4 leading-relaxed">
+          <p className="font-space-mono text-sm text-white/70 mt-5 leading-relaxed">
             Coursework in software engineering, databases, and information systems.
           </p>
         </PixelCard>
@@ -444,14 +444,14 @@ function Education() {
 
       <SectionLabel>// CERTIFICATIONS</SectionLabel>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {certifications.map((cert, i) => (
           <ScrollReveal key={cert.title} delay={i * 0.07}>
-            <div className="border border-white/20 p-4 hover:border-white/60 transition-colors duration-200 relative group">
+            <div className="border border-white/30 p-6 hover:border-white/70 transition-colors duration-200 relative group">
               <div className="absolute top-0 left-0 w-2 h-2 bg-white/0 group-hover:bg-white transition-colors duration-200" />
-              <div className="font-space-mono text-xs text-white/70 mb-1 leading-relaxed">{cert.title}</div>
-              <div className="font-vt323 text-base text-white/40">{cert.org}</div>
-              <div className="font-press-start text-[9px] text-white/30 mt-2">{cert.year}</div>
+              <div className="font-space-mono text-sm text-white/85 mb-2 leading-relaxed">{cert.title}</div>
+              <div className="font-vt323 text-xl text-white/65">{cert.org}</div>
+              <div className="font-press-start text-[10px] text-white/55 mt-3">{cert.year}</div>
             </div>
           </ScrollReveal>
         ))}
@@ -464,17 +464,17 @@ function Education() {
 
 function Extras() {
   return (
-    <section className="relative z-10 max-w-4xl mx-auto px-6 py-12">
+    <section className="relative z-10 max-w-4xl mx-auto px-6 py-24">
       <SectionLabel>// EXTRACURRICULAR</SectionLabel>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {extras.map((e, i) => (
           <ScrollReveal key={e.org} delay={i * 0.1}>
             <PixelCard>
-              <div className="font-press-start text-[10px] text-white mb-1">{e.org}</div>
-              <div className="font-vt323 text-xl text-white/60 mb-1">{e.role}</div>
-              <div className="font-space-mono text-xs text-white/30 mb-3">{e.period}</div>
-              <p className="font-space-mono text-xs text-white/50 leading-relaxed">{e.desc}</p>
+              <div className="font-press-start text-xs text-white mb-2">{e.org}</div>
+              <div className="font-vt323 text-2xl text-white/85 mb-2">{e.role}</div>
+              <div className="font-space-mono text-sm text-white/60 mb-4">{e.period}</div>
+              <p className="font-space-mono text-sm text-white/80 leading-relaxed">{e.desc}</p>
             </PixelCard>
           </ScrollReveal>
         ))}
@@ -493,15 +493,15 @@ function Languages() {
   ];
 
   return (
-    <section className="relative z-10 max-w-4xl mx-auto px-6 py-12">
+    <section className="relative z-10 max-w-4xl mx-auto px-6 py-24">
       <SectionLabel>// LANGUAGES</SectionLabel>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {langs.map((lang, i) => (
           <ScrollReveal key={lang.name} delay={i * 0.1}>
-            <div className="border border-white/20 p-5 hover:border-white/60 transition-colors duration-200">
-              <div className="font-press-start text-xs text-white mb-2">{lang.name}</div>
-              <div className="font-vt323 text-lg text-white/50 mb-4">{lang.level}</div>
+            <div className="border border-white/30 p-7 hover:border-white/70 transition-colors duration-200">
+              <div className="font-press-start text-xs text-white mb-3">{lang.name}</div>
+              <div className="font-vt323 text-xl text-white/75 mb-5">{lang.level}</div>
               <div className="w-full h-2 bg-white/10 relative overflow-hidden">
                 <motion.div
                   className="absolute left-0 top-0 h-full bg-white"
@@ -523,13 +523,13 @@ function Languages() {
 
 function Contact() {
   return (
-    <section id="contact" className="relative z-10 max-w-4xl mx-auto px-6 py-24">
+    <section id="contact" className="relative z-10 max-w-4xl mx-auto px-6 py-32">
       <SectionLabel>// CONTACT</SectionLabel>
 
       <ScrollReveal>
         <PixelCard className="text-center">
-          <div className="font-press-start text-xs text-white/40 mb-4 tracking-wider">READY TO CONNECT?</div>
-          <div className="font-press-start text-lg sm:text-2xl text-white mb-6 leading-tight">
+          <div className="font-press-start text-xs text-white/65 mb-5 tracking-wider">READY TO CONNECT?</div>
+          <div className="font-press-start text-xl sm:text-2xl text-white mb-8 leading-tight">
             LET&rsquo;S BUILD<br />SOMETHING GREAT
           </div>
 
