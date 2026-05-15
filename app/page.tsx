@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type ReactNode } from "react";
+import React, { useState, useEffect, type ReactNode } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import PixelStars from "./components/PixelStars";
@@ -127,11 +127,11 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
-function PixelCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+function PixelCard({ children, className = "", style }: { children: ReactNode; className?: string; style?: React.CSSProperties }) {
   return (
     <div
       className={`relative border-2 border-white bg-black hover:bg-white/5 transition-colors duration-200 ${className}`}
-      style={{ imageRendering: "pixelated", padding: "2rem" }}
+      style={{ imageRendering: "pixelated", padding: "2rem", ...style }}
     >
       {/* Corner pixels */}
       <div className="absolute -top-1 -left-1 w-2 h-2 bg-white" />
